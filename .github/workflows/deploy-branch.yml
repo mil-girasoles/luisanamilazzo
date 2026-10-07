@@ -1,0 +1,26 @@
+# Publishes the contents of site/ to the root of the `deploy` branch.
+# Hostinger (hPanel → Advanced → Git) deploys that branch into public_html.
+name: Update deploy branch
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push site/ to the deploy branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git subtree split --prefix site -b deploy
+          git push --force origin deploy

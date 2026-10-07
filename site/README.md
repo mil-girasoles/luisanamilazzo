@@ -11,5 +11,3 @@ Static site built from concept **1a "The Span"** in `project/Brand Concepts.dc.h
 - `css/industry.css` is an unmodified copy of the Industry design system (`project/styles.css`).
 - `css/site.css` adds the LM logo colours (Cobalt `#024AAD` → Iris `#655BC9` → Orchid `#C96BE5`) and the brand components. The signature component is the dimension line (`.dim`).
 - `assets/` holds resized web copies of `project/assets/`.
-
-Before publishing, replace the LinkedIn placeholder in `about.html`, which is marked with a TODO.
